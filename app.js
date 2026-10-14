@@ -5,7 +5,7 @@
  * Isi API_URL dengan URL Web App Google Apps Script.
  * ========================================================= */
 
-const API_URL = 'GANTI_DENGAN_URL_WEB_APP_APPS_SCRIPT_CUSTOMER';
+const API_URL = 'https://script.google.com/macros/s/AKfycbzVm9b0veD1_uhaa9-bBjtgzMoKW6Jd1_lpQVQp6a9MKEKMbqrzFWDigiUgtGcZIj8AzA/exec';
 
 const state = {
     products: [],
