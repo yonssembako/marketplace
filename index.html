@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>YONS AGEN | Marketplace</title>
 
@@ -12,11 +12,8 @@
 
 <body>
 
-    <!-- =====================================================
-         HEADER / NAVBAR
-    ====================================================== -->
+    <!-- HEADER -->
     <header class="topbar">
-
         <div class="brand">
             <div class="logo">Y</div>
 
@@ -34,15 +31,10 @@
             🛒 Keranjang
             <span id="cartCount">0</span>
         </button>
-
     </header>
 
-
-    <!-- =====================================================
-         HERO SECTION
-    ====================================================== -->
-    <section class="hero">
-
+    <!-- HERO SECTION -->
+    <section id="heroSection" class="hero">
         <div>
             <span class="eyebrow">
                 MARKETPLACE YONS AGEN
@@ -55,66 +47,82 @@
                 Ongkos kirim akan dikonfirmasi admin.
             </p>
         </div>
-
     </section>
 
-
-    <!-- =====================================================
-         KONTEN UTAMA MARKETPLACE
-    ====================================================== -->
+    <!-- KONTEN UTAMA -->
     <main class="container">
 
-        <!-- Pencarian dan Filter Produk -->
-        <div class="toolbar">
-
-            <input
-                id="search"
-                type="search"
-                placeholder="Cari nama produk…"
-                aria-label="Cari produk"
-            >
-
-            <select id="category" aria-label="Filter kategori">
-                <option value="">Semua kategori</option>
-            </select>
-
-            <button
-                id="reload"
-                class="button secondary"
-                type="button"
-            >
-                Muat ulang
-            </button>
-
-        </div>
-
-
-        <!-- Notifikasi Status -->
-        <div
-            id="notice"
-            class="notice"
-            role="status"
-            aria-live="polite"
-        >
-            Memuat produk…
-        </div>
-
-
-        <!-- Daftar Produk -->
+        <!-- HALAMAN PRODUK -->
         <section
-            id="products"
-            class="products"
-            aria-label="Daftar produk"
-        ></section>
+            id="productsPage"
+            class="page-view"
+        >
 
+            <!-- TOOLBAR PENCARIAN -->
+            <div class="toolbar">
+                <input
+                    id="search"
+                    type="search"
+                    placeholder="Cari nama produk…"
+                    aria-label="Cari produk"
+                >
 
-        <!-- =================================================
-             KERANJANG BELANJA
-        ================================================== -->
-        <section id="cartSection" class="panel">
+                <select id="category">
+                    <option value="">Semua kategori</option>
+                </select>
 
+                <button
+                    id="reload"
+                    class="button secondary"
+                    type="button"
+                >
+                    Muat ulang
+                </button>
+            </div>
+
+            <!-- NOTIFIKASI -->
+            <div
+                id="notice"
+                class="notice"
+                role="status"
+            >
+                Memuat produk…
+            </div>
+
+            <!-- DETAIL PRODUK -->
+            <section
+                id="productDetail"
+                class="product-detail panel hidden"
+                aria-live="polite"
+            ></section>
+
+            <!-- DAFTAR PRODUK -->
+            <section
+                id="products"
+                class="products"
+            ></section>
+
+        </section>
+
+        <!-- HALAMAN KERANJANG -->
+        <section
+            id="cartSection"
+            class="panel page-view hidden"
+        >
+
+            <!-- NAVIGASI KERANJANG -->
+            <div class="cart-page-head">
+                <button
+                    id="backToProducts"
+                    type="button"
+                    class="button secondary"
+                >
+                    ← Kembali ke Produk
+                </button>
+            </div>
+
+            <!-- JUDUL KERANJANG -->
             <div class="section-head">
-
                 <div>
                     <span class="eyebrow">
                         PESANAN ANDA
@@ -129,29 +137,23 @@
                 >
                     0 barang
                 </span>
-
             </div>
 
-
-            <!-- Daftar Barang di Keranjang -->
+            <!-- DAFTAR ITEM KERANJANG -->
             <div
                 id="cartItems"
                 class="cart-items"
-                aria-live="polite"
             >
                 <p class="muted">
                     Belum ada barang di keranjang.
                 </p>
             </div>
 
-
-            <!-- Subtotal -->
+            <!-- SUBTOTAL -->
             <div class="subtotal-row">
-
                 <span>Subtotal barang</span>
 
                 <strong id="subtotal">Rp0</strong>
-
             </div>
 
             <p class="muted small">
@@ -159,24 +161,23 @@
                 dan mengonfirmasi total tagihan.
             </p>
 
-
-            <!-- =============================================
-                 FORMULIR PEMESANAN
-            ============================================== -->
-            <form id="orderForm" class="order-form">
+            <!-- FORM PEMESANAN -->
+            <form
+                id="orderForm"
+                class="order-form"
+            >
 
                 <h3>Data pemesan</h3>
 
-
-                <!-- Data Pelanggan -->
+                <!-- IDENTITAS DAN ALAMAT -->
                 <div class="form-grid">
 
                     <label>
                         Nama pemesan *
 
                         <input
-                            type="text"
                             name="nama"
+                            type="text"
                             required
                             maxlength="120"
                             autocomplete="name"
@@ -184,13 +185,12 @@
                         >
                     </label>
 
-
                     <label>
                         Nomor HP / WhatsApp *
 
                         <input
-                            type="tel"
                             name="hp"
+                            type="tel"
                             required
                             maxlength="25"
                             autocomplete="tel"
@@ -198,7 +198,6 @@
                             placeholder="08xxxxxxxxxx"
                         >
                     </label>
-
 
                     <label class="full">
                         Alamat pengiriman *
@@ -215,10 +214,8 @@
 
                 </div>
 
-
-                <!-- Lokasi GPS -->
+                <!-- LOKASI GPS -->
                 <div class="gps-row">
-
                     <button
                         id="gpsButton"
                         type="button"
@@ -230,20 +227,19 @@
                     <span
                         id="gpsStatus"
                         class="muted small"
-                        aria-live="polite"
                     >
                         Opsional, perlu izin lokasi dari perangkat.
                     </span>
-
                 </div>
 
-
-                <!-- Metode Pembayaran -->
+                <!-- METODE PEMBAYARAN -->
                 <label>
                     Metode pembayaran *
 
-                    <select name="pembayaran" required>
-
+                    <select
+                        name="pembayaran"
+                        required
+                    >
                         <option value="">
                             Pilih metode pembayaran
                         </option>
@@ -259,12 +255,10 @@
                         <option value="Transfer Bank">
                             Transfer Bank
                         </option>
-
                     </select>
                 </label>
 
-
-                <!-- Catatan Pesanan -->
+                <!-- CATATAN PESANAN -->
                 <label>
                     Catatan pesanan (opsional)
 
@@ -276,8 +270,7 @@
                     ></textarea>
                 </label>
 
-
-                <!-- Informasi Konfirmasi Pesanan -->
+                <!-- INFORMASI PEMBAYARAN -->
                 <div class="notice warning">
                     Dengan mengirim pesanan, Anda memahami bahwa
                     pesanan menunggu konfirmasi admin. Jangan
@@ -285,8 +278,7 @@
                     akhir dan instruksi pembayaran.
                 </div>
 
-
-                <!-- Tombol Kirim Pesanan -->
+                <!-- TOMBOL KIRIM PESANAN -->
                 <button
                     id="submitOrder"
                     class="button primary wide"
@@ -301,39 +293,27 @@
 
     </main>
 
-
-    <!-- =====================================================
-         FOOTER
-    ====================================================== -->
+    <!-- FOOTER -->
     <footer>
         © YONS AGEN · Marketplace pelanggan
     </footer>
 
-
-    <!-- =====================================================
-         MODAL SUKSES
-    ====================================================== -->
+    <!-- MODAL PESANAN BERHASIL -->
     <div
         id="successModal"
         class="modal hidden"
-        role="dialog"
-        aria-modal="true"
-        aria-labelledby="successTitle"
     >
-
         <div class="modal-card">
 
             <div class="success-icon">✓</div>
 
-            <h2 id="successTitle">
-                Pesanan terkirim
-            </h2>
+            <h2>Pesanan terkirim</h2>
 
             <p id="successText"></p>
 
             <p class="muted small">
-                Simpan nomor pesanan ini untuk referensi
-                saat menghubungi admin.
+                Simpan nomor pesanan ini untuk referensi saat
+                menghubungi admin.
             </p>
 
             <button
@@ -345,13 +325,9 @@
             </button>
 
         </div>
-
     </div>
 
-
-    <!-- =====================================================
-         JAVASCRIPT APLIKASI
-    ====================================================== -->
+    <!-- JAVASCRIPT -->
     <script src="app.js"></script>
 
 </body>
