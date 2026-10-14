@@ -1,4 +1,3 @@
-```javascript
 /* =========================================================
  * YONS AGEN CUSTOMER
  * Aplikasi pemesanan pelanggan.
@@ -676,4 +675,4 @@ $('closeModal').addEventListener('click', () => {
 
 loadProducts();
 renderCart();
-```
+
